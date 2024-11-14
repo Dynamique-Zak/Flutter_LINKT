@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'articles/article-page.dart';
 import 'auth/login-page.dart';
 
 void main() {
@@ -17,9 +18,10 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      initialRoute: "/",
+      initialRoute: "/articles",
       routes: {
         "/" : (context) => LoginPage(),
+        "/articles" : (context) => ArticlePage()
       },
     );
   }
