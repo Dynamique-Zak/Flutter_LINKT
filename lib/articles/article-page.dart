@@ -15,6 +15,10 @@ class _ArticlePageState extends State<ArticlePage> {
   List<Article> articles = [];
 
   void onSubmit(BuildContext context) async {
+    setState(() {
+      articles = [];
+    });
+
     // Afficher ecran de chargement
     AppDialogHelper.showProgressDialog(
         context, "Tentative d'accès à la page...");
@@ -41,8 +45,6 @@ class _ArticlePageState extends State<ArticlePage> {
     AppDialogHelper.closeProgressDialog();
 
     if (responseBodyJson['code'] == "200") {
-      print("TODO : Afficher la liste des articles");
-
       // mettre à jour la liste des articles
       setState(() {
         articles = List<Article>.from(responseBodyJson['data']
